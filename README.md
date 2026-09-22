@@ -31,4 +31,5 @@ The endpoint verifies that the requester is authenticated, but does not verify t
 
 ## Demo
 
-(video goes here)
+https://github.com/user-attachments/assets/186d6b9b-a561-47e0-802e-df9e98eb41d4
+
