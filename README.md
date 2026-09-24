@@ -7,7 +7,7 @@ CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
 ```
 Score: 8.8 (High).
 
-Affected version: 7.3.0 built from commit `9cf8ddd5da1673c5774b847af8dca9dcb5fb1be6`
+Affected version: 7.3.1
 
 ## Description
 This issue can be chained with [GHSA-297r-vfh5-2xqc](https://github.com/dbgate/dbgate/security/advisories/GHSA-297r-vfh5-2xqc), which exposes active database session identifiers through the unauthenticated /stream endpoint.
