@@ -33,3 +33,8 @@ The endpoint verifies that the requester is authenticated, but does not verify t
 
 https://github.com/user-attachments/assets/186d6b9b-a561-47e0-802e-df9e98eb41d4
 
+This vulnerability was discovered by [YonLiud](https://github.com/YonLiud) and is provided “as is” for security research, education, and authorized testing purposes only.
+The vulnerability was reported to the DbGate maintainers on September 20, 2026. No response or acknowledgment was received from the maintainers as of the date of publication.
+This project must not be used for malicious purposes or against systems, networks, accounts, or data without explicit authorization from the owner. Any testing should be performed only in an isolated laboratory environment or within an explicitly authorized scope.
+The author makes no warranties regarding this project and accepts no responsibility for damage, data loss, service disruption, unauthorized access, legal violations, or any other consequences resulting from its use, misuse, modification, or redistribution.
+By downloading, executing, or using this project, you acknowledge that you are solely responsible for your actions and for complying with all applicable laws and regulations.
