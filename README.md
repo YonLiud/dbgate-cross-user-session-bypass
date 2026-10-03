@@ -10,7 +10,7 @@ Score: 8.8 (High).
 Affected version: 7.3.1
 
 ## Description
-This issue can be chained with [GHSA-297r-vfh5-2xqc](https://github.com/dbgate/dbgate/security/advisories/GHSA-297r-vfh5-2xqc), which exposes active database session identifiers through the unauthenticated /stream endpoint.
+This issue can be chained with [GHSA-297r-vfh5-2xqc](https://github.com/dbgate/dbgate/security/advisories/GHSA-297r-vfh5-2xqc) (aka [YonLiud/DbGate-sse-disclosure](https://github.com/YonLiud/DbGate-sse-disclosure)), which exposes active database session identifiers through the unauthenticated /stream endpoint.
 
 After obtaining another user's `sesid`, a low-privilege authenticated user can submit it to `/sessions/execute-query` using their own valid bearer token.
 
