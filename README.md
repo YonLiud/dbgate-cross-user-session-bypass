@@ -37,8 +37,14 @@ Verified on 2026-10-15 against the official `dbgate/dbgate:7.3.2` Docker image
 Two distinct local accounts were used against a disposable SQLite connection. A session
 created by the victim account was supplied as `sesid` in an authenticated request from
 the attacker account. DbGate returned `{"state":"ok"}` and executed a harmless marker
-write in the victim session. The request path performs generic query and database-role
-checks, but no session-owner check.
+write in the victim session.
+
+The execution identity was separately verified with PostgreSQL connections using distinct
+database principals. The attacker DbGate account could not create tables, but its request
+against the victim `sesid` created a table owned by the victim database principal. The
+attacker token therefore authorizes the API request, while the already-open victim session
+supplies the database identity that executes the SQL. The request path performs generic
+query and database-role checks, but no session-owner check.
 
 ## Demo
 
