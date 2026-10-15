@@ -7,7 +7,7 @@ CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
 ```
 Score: 8.8 (High).
 
-Affected version: 7.3.1
+Affected version: <= 7.3.2 (7.3.2 verified)
 
 ## Description
 This issue can be chained with [GHSA-297r-vfh5-2xqc](https://github.com/dbgate/dbgate/security/advisories/GHSA-297r-vfh5-2xqc) (aka [YonLiud/DbGate-sse-disclosure](https://github.com/YonLiud/DbGate-sse-disclosure)), which exposes active database session identifiers through the unauthenticated /stream endpoint.
@@ -28,6 +28,17 @@ Content-Type: application/json
 ```
 
 The endpoint verifies that the requester is authenticated, but does not verify that the requester owns the referenced database session or connection.
+
+## Validation
+
+Verified on 2026-10-15 against the official `dbgate/dbgate:7.3.2` Docker image
+(`sha256:fc68e7c433963bff17af7372ce87f4b94873551a1c1b124220c8c04a22a80311`).
+
+Two distinct local accounts were used against a disposable SQLite connection. A session
+created by the victim account was supplied as `sesid` in an authenticated request from
+the attacker account. DbGate returned `{"state":"ok"}` and executed a harmless marker
+write in the victim session. The request path performs generic query and database-role
+checks, but no session-owner check.
 
 ## Demo
 
